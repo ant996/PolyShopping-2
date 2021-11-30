@@ -1,0 +1,42 @@
+<%- include _layouts/header %>
+
+<h2 class="page-title">Reserver</h2>
+<br>
+
+
+<form method="post" action="/admin/reserv/edit-reserv/<%= id %>" enctype="multipart/form-data">
+    <div class="row">
+        <div class="form-group">
+            <label for="">Disponibilité</label>
+            <select name="reserv" class="form-control">
+                <% reservation.forEach(function(res){ %>
+                    <option value="<%= res.title %>"
+                    <% if (res.title == reserv) { %>
+                    selected="selected"
+                    <% } %>        
+                    ><%= res.title %></option>
+                <% }); %>
+            </select>
+            <br><br>
+            <button class="btn btn-default">Valider</button>
+        </div>
+ 
+        <h1 class="page-header"><%= title %></h1>
+    
+        <div class="col-xs-12 col-md-5">
+            <img class="spi" src="/product_images/<%= id %>/<%= image %>" alt="">
+            <br>
+        </div>
+        <div class="col-xs-12 col-md-7">
+            <p><%= desc %></p>
+            <p><%= parseFloat(price).toFixed(2) %> €</p>
+
+        </div>
+    </div>
+</form>
+
+<br>
+<a href="/admin/products" class="btn btn-primary">Retour à tous les produits</a>
+<br><br>
+
+<%- include _layouts/footer %>
