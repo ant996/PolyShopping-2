@@ -83,7 +83,8 @@ router.get('/edit-reserv/:id', function (req, res) {
  */
 router.post('/edit-reserv/:id', function (req, res) {
 
-    var imageFile = typeof req.files.image !== "undefined" ? req.files.image.name : "";
+    if(!req.files){ imageFile ="" ; }
+    if(req.files){ var imageFile = typeof(req.files.image) !== "undefined" ? req.files.image.name : "";}
 
     req.checkBody('title','Titre non valide').notEmpty();
     req.checkBody('desc', 'Descriptionnon valide').notEmpty();
