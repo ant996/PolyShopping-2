@@ -64,7 +64,8 @@ router.get('/add-product', function (req, res) {
  */
 router.post('/add-product', function (req, res) {
 
-    var imageFile = typeof req.files.image !== "Aucun fichier choisi" ? req.files.image.name : "";
+    if(!req.files){ imageFile ="" ; }
+    if(req.files){ var imageFile = typeof(req.files.image) !== "undefined" ? req.files.image.name : "";}
 
     req.checkBody('title', 'Title non valide').notEmpty();
     req.checkBody('desc', 'Description non valide').notEmpty();
@@ -207,7 +208,8 @@ router.get('/edit-product/:id', function (req, res) {
  */
 router.post('/edit-product/:id', function (req, res) {
 
-    var imageFile = typeof req.files.image !== "undefined" ? req.files.image.name : "";
+    if(!req.files){ imageFile ="" ; }
+    if(req.files){ var imageFile = typeof(req.files.image) !== "undefined" ? req.files.image.name : "";}
 
     req.checkBody('title','Titre non valide').notEmpty();
     req.checkBody('desc', 'Descriptionnon valide').notEmpty();
