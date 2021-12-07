@@ -149,8 +149,8 @@ router.post('/edit-reserv/:id', function (req, res) {
 
                         }
 
-                        req.flash('Succès', 'Produit mise en ligne');
-                        res.redirect('/admin/reserv/edit-reserv/' + id);
+                        req.flash('Succes', 'Etat de réservation pris en compte');
+                        res.redirect('/');
                     });
 
                 });

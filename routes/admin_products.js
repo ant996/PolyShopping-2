@@ -275,7 +275,7 @@ router.post('/edit-product/:id', function (req, res) {
                         }
 
                         req.flash('Succès', 'Produit mise en ligne');
-                        res.redirect('/admin/products/edit-product/' + id);
+                        res.redirect('/admin/products');
                     });
 
                 });
