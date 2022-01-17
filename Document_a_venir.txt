@@ -1,0 +1,3 @@
+Document à venir (pour la semaine du 24 Janvier):
+- Finalisation fiche test (Alexandre) (soutien Antoine)
+- test automatique (Alexandre) (soutien Antoine)
