@@ -83,14 +83,11 @@ router.get('/edit-reserv/:id', function (req, res) {
  */
 router.post('/edit-reserv/:id', function (req, res) {
 
-    if(!req.files){ imageFile ="" ; }
+    if(!req.files){ imageFile ="";}
     if(req.files){ var imageFile = typeof(req.files.image) !== "undefined" ? req.files.image.name : "";}
 
-    req.checkBody('title','Titre non valide').notEmpty();
-    req.checkBody('desc', 'Descriptionnon valide').notEmpty();
-    req.checkBody('price', 'Prix non valide').isDecimal();
     req.checkBody('reserv','reserv non valide').notEmpty();
-    req.checkBody('Image', 'Image non valide').isImage(imageFile);
+
 
     var title = req.body.title;
     var slug = title.replace(/\s+/g, '-').toLowerCase();
@@ -105,7 +102,7 @@ router.post('/edit-reserv/:id', function (req, res) {
 
     if (errors) {
         req.session.errors = errors;
-        res.redirect('/admin/products/edit-product/' + id);
+        res.redirect('/' + id);
     } else {
         Product.findOne({slug: slug, _id: {'$ne': id}}, function (err, p) {
             if (err)
@@ -149,7 +146,7 @@ router.post('/edit-reserv/:id', function (req, res) {
 
                         }
 
-                        req.flash('Succes', 'Etat de réservation pris en compte');
+                        req.flash('Succès', 'Produit mise en ligne');
                         res.redirect('/');
                     });
 

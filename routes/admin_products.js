@@ -64,7 +64,10 @@ router.get('/add-product', function (req, res) {
  */
 router.post('/add-product', function (req, res) {
 
+   
+
     if(!req.files){ imageFile ="" ; }
+
     if(req.files){ var imageFile = typeof(req.files.image) !== "undefined" ? req.files.image.name : "";}
 
     req.checkBody('title', 'Title non valide').notEmpty();
@@ -208,7 +211,9 @@ router.get('/edit-product/:id', function (req, res) {
  */
 router.post('/edit-product/:id', function (req, res) {
 
+    
     if(!req.files){ imageFile ="" ; }
+
     if(req.files){ var imageFile = typeof(req.files.image) !== "undefined" ? req.files.image.name : "";}
 
     req.checkBody('title','Titre non valide').notEmpty();
@@ -275,7 +280,7 @@ router.post('/edit-product/:id', function (req, res) {
                         }
 
                         req.flash('Succès', 'Produit mise en ligne');
-                        res.redirect('/admin/products');
+                        res.redirect('/admin/products/edit-product/' + id);
                     });
 
                 });
