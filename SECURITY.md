@@ -1,5 +1,9 @@
 # Security Policy
 
+## Suite à des difficultés matériels pour le référent Sécurité quelques points n'ont pas pu être finalisé totalement. La derniére mise à jours des documents sécurité a été réalisé pour le responsable Dévelloppement WEB.
+
+## Plusieurs alertes de vulnérabilités, on était detecté par Github. Mais en raison de leur status modéré et d'un manque de compétences sur ce sujet, il a été décidé de ne pas priorisé cette mise à jours.
+
 ## Supported Versions
 
 Use this section to tell people about which versions of your project are
