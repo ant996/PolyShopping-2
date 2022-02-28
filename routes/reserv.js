@@ -90,7 +90,7 @@ router.post('/edit-reserv/:id', function (req, res) {
 
 
     var title = req.body.title;
-    var slug = title.replace(/\s+/g, '-').toLowerCase();
+    var slug = req.body.title;
     var desc = req.body.desc;
     var price = req.body.price;
     var category = req.body.category;
