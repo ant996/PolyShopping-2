@@ -25,6 +25,12 @@ Lancer visualstudio est tapé les commande suivante :
     - npm install node js 
     
     - npm audit fix --force
+    
+    (suite un mise à jours majeur de la librairie les commandes suivante sont obligatoire)
+    
+    - npm uninstall express-validator
+    
+    - npm i express-validator@5.3.1
 
 Lancer Mongodb est faite les étapes suivante :
 
